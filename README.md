@@ -13,7 +13,7 @@ SeleniumのChromeDriverを使ってるので**Chromeのインストールが必�
 
 ## 推奨要件
 
-* けいふぉんと(http://font.sumomo.ne.jp/font_1.html)がインストール済みであること(中で使ってます)
+* けいふぉんと([http://font.sumomo.ne.jp/font_1.html](http://font.sumomo.ne.jp/font_1.html))がインストール済みであること(中で使ってます)
 
 ## 画像のカスタマイズ
 
@@ -22,7 +22,10 @@ SeleniumのChromeDriverを使ってるので**Chromeのインストールが必�
 
 ## つかいかた
 
-`titlemaker.bat`を実行する。すると自動的にヘッドレスChromeブラウザが立ち上がりスクリーンショットを撮影して落ちます。
+`titlemaker.bat`を実行する。
+
+すると自動的にヘッドレスChromeブラウザが立ち上がりスクリーンショットを撮影して落ちます。
+
 撮影した画像はOneDriveのstand.fmフォルダに配置されます(フォルダがない場合は事前に作っておいてください)。
 
 もし、そのフォルダにYYYY-MM-DD.mp3というファイルがあればそのタイトルタグから記事タイトルを勝手にとってきます。
