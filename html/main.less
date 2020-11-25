@@ -1,0 +1,70 @@
+@text-adjast: 20px;
+body{
+  width: 750px;
+  height: 820px;
+  margin: 0;
+  background-color: #FFEEDF;
+  font-family: "けいふぉんと";
+}
+
+article{
+  display: block;
+  padding: @text-adjast;
+  box-sizing: border-box;
+  > div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+#daytitle, #credit{
+  height: 205px;
+}
+
+#daytitle{
+  background-color: #DFF0FF;
+  > div{
+    &.left {
+      float: left;
+      width: 16ex;
+      margin-right: 10px;
+    }
+    > div.text{
+      flex: 1;
+      > span{
+        display: block;
+        &#day{
+          font-size: 2.5ex;
+          font-family: "Bauhaus 93";
+        }
+        &#week {
+          font-size: 5ex;
+        }
+        &#theme {
+          font-size: 7.5ex;
+        }
+      }
+    }
+  }
+}
+
+#maintitle{
+  height: 410px;
+  border: 0 solid white;
+  border-width: 4px 0;
+  #title {
+    font-size: 8ex;
+  }
+}
+
+#credit{
+  background-color: #F0FFDF;
+  #chname{
+    font-size: 6ex;
+  }
+  #chdest{
+    display: block;
+    font-size: 2.2ex;
+  }
+}

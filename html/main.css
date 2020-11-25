@@ -1,0 +1,63 @@
+body {
+  width: 750px;
+  height: 820px;
+  margin: 0;
+  background-color: #FFEEDF;
+  font-family: "けいふぉんと";
+}
+article {
+  display: block;
+  padding: 20px;
+  box-sizing: border-box;
+}
+article > div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+#daytitle,
+#credit {
+  height: 205px;
+}
+#daytitle {
+  background-color: #DFF0FF;
+}
+#daytitle > div.left {
+  float: left;
+  width: 16ex;
+  margin-right: 10px;
+}
+#daytitle > div > div.text {
+  flex: 1;
+}
+#daytitle > div > div.text > span {
+  display: block;
+}
+#daytitle > div > div.text > span#day {
+  font-size: 2.5ex;
+  font-family: "Bauhaus 93";
+}
+#daytitle > div > div.text > span#week {
+  font-size: 5ex;
+}
+#daytitle > div > div.text > span#theme {
+  font-size: 7.5ex;
+}
+#maintitle {
+  height: 410px;
+  border: 0 solid white;
+  border-width: 4px 0;
+}
+#maintitle #title {
+  font-size: 8ex;
+}
+#credit {
+  background-color: #F0FFDF;
+}
+#credit #chname {
+  font-size: 6ex;
+}
+#credit #chdest {
+  display: block;
+  font-size: 2.2ex;
+}
