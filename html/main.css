@@ -7,7 +7,8 @@ body {
 }
 article {
   display: block;
-  padding: 40px;
+  padding: 40px 50px;
+  border: 0 dashed white;
   box-sizing: border-box;
 }
 article > div {
@@ -17,11 +18,12 @@ article > div {
 }
 #daytitle,
 #credit {
-  height: calc(820px / 4);
+  height: calc(820px / 3.5);
 }
 #daytitle {
   background-color: #DFF0FF;
-  padding-top: 80px;
+  padding-top: 100px;
+  border-bottom-width: 8px;
 }
 #daytitle > div.left {
   float: left;
@@ -45,16 +47,16 @@ article > div {
   font-size: 7.5ex;
 }
 #maintitle {
-  height: calc(820px - 820px / 4 * 2);
-  border: 0 solid white;
-  border-width: 4px 0;
+  height: calc(820px - 820px / 3.5 * 2);
+  border-width: 8px 0;
 }
 #maintitle #title {
   font-size: 8ex;
 }
 #credit {
   background-color: #F0FFDF;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
+  border-top-width: 8px;
 }
 #credit #chname {
   font-size: 6ex;

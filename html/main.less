@@ -1,5 +1,5 @@
-@text-adjast: 80px;
-@bar-percentage: 4.0;
+@text-adjast: 100px;
+@bar-percentage: 3.5;
 body{
   width: 750px;
   height: 820px;
@@ -10,7 +10,8 @@ body{
 
 article{
   display: block;
-  padding: 40px;
+  padding: 40px 50px;
+  border: 0 dashed white;
   box-sizing: border-box;
   > div{
     height: 100%;
@@ -26,6 +27,7 @@ article{
 #daytitle{
   background-color: #DFF0FF;
   padding-top: @text-adjast;
+  border-bottom-width: 8px;
   > div{
     &.left {
       float: left;
@@ -53,8 +55,7 @@ article{
 
 #maintitle{
   height: calc(820px - 820px / @bar-percentage * 2);
-  border: 0 solid white;
-  border-width: 4px 0;
+  border-width: 8px 0;
   #title {
     font-size: 8ex;
   }
@@ -63,6 +64,7 @@ article{
 #credit{
   background-color: #F0FFDF;
   padding-bottom: @text-adjast;
+  border-top-width: 8px;
   #chname{
     font-size: 6ex;
   }
