@@ -1,0 +1,38 @@
+_Tk:
+  title: Config
+  _Frame:
+    pack: { padx: 4, pady: 4, fill: both, expand: 1}
+    ::gridcolumn:
+      index: 1
+      weight: 1
+    ::children:
+      - _Label:
+          text: Date
+          grid: { column: 0, row: 0}
+      - _DateEntry:
+          ::id: date
+          grid: { column: 1, row: 0, pady: 2, sticky: ew}
+      - _Label:
+          text: Theme
+          grid: { column: 0, row: 1}
+      - _Entry:
+          textvariable: !!var:StringVar
+            name: theme
+          grid: { column: 1, row: 1, pady: 2, sticky: ew}
+      - _Label:
+          text: Title
+          grid: { column: 0, row: 2}
+      - _Entry:
+          textvariable: !!var:StringVar
+            name: title
+          grid: { column: 1, row: 2, pady: 2, sticky: ew}
+      - _Button:
+          text: OK
+          ::tag: OK
+          ::command:
+          grid: { column: 0, row: 3, pady: 2}
+      - _Button:
+          text: Cancel
+          ::tag: Cancel
+          ::command:
+          grid: { column: 0, row: 4, pady: 2}

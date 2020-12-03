@@ -8,6 +8,8 @@ jinja2 = "*"
 selenium = "*"
 chromedriver-binary = "*"
 mutagen = "*"
+tksugar = "*"
+tkcalendar = "*"
 
 [dev-packages]
 
