@@ -18,6 +18,7 @@ THEME_TEXT = {
   2: "フリートーク",
   3: "きまぐれライブ",
   4: "今週の予定",
+  5: ["ゲームについて", "アニメについて", "地域について", "SBC.について", "フリートーク"],
   6: "きまぐれライブ",
 }
 TODAY = datetime.date.today()
@@ -53,7 +54,7 @@ if args.gui:
     obj.tk.quit()
   man = gen.get_manager(commandhandler=button)
   man.widgets["date"].widget.set_date(args.date)
-  man.vars["theme"].set(args.theme)
+  man.vars["theme"].set(args.theme[args.date.day // 7] if type(args.theme) is list else args.theme)
   man.vars["title"].set(args.title)
   man.mainloop()
   man.window.update()
@@ -64,7 +65,7 @@ template = env.get_template('base.html')
 data = {
   'day' : args.date.strftime("%Y/%m/%d"),
   'week': "{0}曜日".format("月火水木金土日"[args.date.weekday()]),
-  'theme': args.theme,
+  'theme': args.theme[args.date.day // 7] if type(args.theme) is list else args.theme,
   'title': args.title
 }
 out = Path(__file__).parent / "html" / "out.html"
