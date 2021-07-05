@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 jinja2 = "*"
 selenium = "*"
-chromedriver-binary = "*"
+chromedriver-binary = "==91.*"
 mutagen = "*"
 tksugar = "*"
 tkcalendar = "*"
