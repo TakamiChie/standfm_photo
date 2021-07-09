@@ -28,12 +28,16 @@ parser = ArgumentParser()
 parser.add_argument("--theme", default=THEME_TEXT[TODAY.weekday()], help="テーマを変更する。" )
 parser.add_argument("--title", help="タイトル。未指定時はファイルからの取得を試みる。")
 parser.add_argument("--date", default=TODAY, type=lambda s: datetime.datetime.strptime(s, "%Y/%m/%d"), help="yyyy/mm/dd形式の日付。指定がない場合は今日の日付。")
+parser.add_argument("--mode", help="モードの値。未指定時モード無し")
 parser.add_argument("--gui", action="store_true" , help="GUIで各種パラメータを入力する。")
 parser.add_argument("--file", help="この値は無視されます")
 parser.add_argument("--bgm", help="この値は無視されます")
 args = parser.parse_args()
 
-mp3path = MP3DIR / args.date.strftime("%Y-%m-%d.mp3")
+fnpattern = "%Y-%m-%d"
+if args.mode: fnpattern += f"_{args.mode}"
+fnpattern += ".mp3"
+mp3path = MP3DIR / args.date.strftime(fnpattern)
 title = "名称未設定"
 if args.title:
   title = args.title
