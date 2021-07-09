@@ -1,0 +1,18 @@
+themes:
+  dailythemes:
+    - プログラミング
+    - SBC.Web配信
+    - フリートーク
+    - きまぐれライブ
+    - 今週の予定
+    -
+      - ゲームについて
+      - アニメについて
+      - 地域について
+      - SBC.について
+      - フリートーク
+    - きまぐれライブ
+  modethemes:
+    live: ライブ再配信
+path:
+  basefolder: "%OneDriveConsumer%\\stand.fm"

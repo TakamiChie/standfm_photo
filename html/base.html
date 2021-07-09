@@ -16,7 +16,7 @@
   </div>
   <div class="right">
     <div class="text">
-      <span id="todaystheme">きょうのテーマは…</span>
+      {% if not mode %}<span id="todaystheme">きょうのテーマは…</span>{% endif %}
       <span id="theme">{{theme}}</span>
     </div>
   </div>
