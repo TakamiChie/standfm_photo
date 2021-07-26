@@ -36,7 +36,8 @@ args = parser.parse_args()
 fnpattern = "%Y-%m-%d"
 if args.mode:
   fnpattern += f"_{args.mode}"
-  args.theme = THEME_MODE_DEF[args.mode]
+  if args.theme == THEME_TEXT_DEF[TODAY.weekday()]:
+    args.theme = THEME_MODE_DEF[args.mode]
 fnpattern += ".mp3"
 mp3path = MP3DIR / args.date.strftime(fnpattern)
 title = "名称未設定"
