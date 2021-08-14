@@ -62,7 +62,7 @@ if args.gui:
     obj.tk.quit()
   man = gen.get_manager(commandhandler=button)
   man.widgets["date"].widget.set_date(args.date)
-  man.vars["theme"].set(args.theme[args.date.day // 7] if type(args.theme) is list else args.theme)
+  man.vars["theme"].set(args.theme[(args.date.day - 1) // 7] if type(args.theme) is list else args.theme)
   man.vars["title"].set(args.title)
   man.mainloop()
   man.window.update()
@@ -73,7 +73,7 @@ template = env.get_template('base.html')
 data = {
   'day' : args.date.strftime("%Y/%m/%d"),
   'week': "{0}曜日".format("月火水木金土日"[args.date.weekday()]),
-  'theme': args.theme[args.date.day // 7] if type(args.theme) is list else args.theme,
+  'theme': args.theme[(args.date.day - 1) // 7] if type(args.theme) is list else args.theme,
   'title': args.title,
   'mode': args.mode
 }
