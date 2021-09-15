@@ -31,6 +31,7 @@ parser.add_argument("--mode", help="モードの値。未指定時モード無�
 parser.add_argument("--gui", action="store_true" , help="GUIで各種パラメータを入力する。")
 parser.add_argument("--file", help="この値は無視されます")
 parser.add_argument("--bgm", help="この値は無視されます")
+parser.add_argument("--outfile", default="0000out", help="出力ファイル(拡張子なし)。")
 args = parser.parse_args()
 
 fnpattern = "%Y-%m-%d"
@@ -89,6 +90,6 @@ options.add_argument('--headless')
 options.add_argument("--window-size=750,820")
 driver = webdriver.Chrome(options=options)
 driver.get('file:///' + str(out))
-driver.save_screenshot(str(MP3DIR / 'out.png'))
+driver.save_screenshot(str(MP3DIR / f'{args.outfile}.png'))
 driver.quit()
 out.unlink()
