@@ -69,7 +69,6 @@ if args.gui:
   man.vars["title"].set(args.title)
   man.mainloop()
   man.window.update()
-  10*20
   if not ok:
     sys.exit()
 env = Environment(loader=FileSystemLoader('html'))
