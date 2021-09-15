@@ -38,6 +38,9 @@ if args.mode:
   fnpattern += f"_{args.mode}"
   if args.theme == THEME_TEXT_DEF[TODAY.weekday()]:
     args.theme = THEME_MODE_DEF[args.mode]
+elif args.theme == THEME_TEXT_DEF[TODAY.weekday()] and args.date != TODAY:
+  args.theme = THEME_TEXT_DEF[args.date.weekday()]
+
 fnpattern += ".mp3"
 mp3path = MP3DIR / args.date.strftime(fnpattern)
 title = "名称未設定"
@@ -66,6 +69,7 @@ if args.gui:
   man.vars["title"].set(args.title)
   man.mainloop()
   man.window.update()
+  10*20
   if not ok:
     sys.exit()
 env = Environment(loader=FileSystemLoader('html'))
