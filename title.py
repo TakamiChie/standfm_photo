@@ -7,7 +7,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
 from selenium import webdriver
-import chromedriver_binary
+import edgedriver_autoinstaller
 from mutagen.easyid3 import EasyID3
 import yaml
 
@@ -85,10 +85,11 @@ out = Path(__file__).parent / "html" / "out.html"
 with open(out, mode="w", encoding="utf-8") as f:
   f.write(template.render(data))
 
-options = webdriver.ChromeOptions()
+options = webdriver.EdgeOptions()
 options.add_argument('--headless')
 options.add_argument("--window-size=750,820")
-driver = webdriver.Chrome(options=options)
+edgedriver_autoinstaller.install()
+driver = webdriver.Edge(options=options)
 driver.get('file:///' + str(out))
 driver.save_screenshot(str(MP3DIR / f'{args.outfile}.png'))
 driver.quit()
