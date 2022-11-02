@@ -5,12 +5,11 @@ name = "pypi"
 
 [packages]
 jinja2 = "*"
-selenium = "*"
 mutagen = "*"
 tksugar = "*"
 tkcalendar = "*"
 pyyaml = "*"
-edgedriver-autoinstaller = "*"
+imgkit = "*"
 
 [dev-packages]
 

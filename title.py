@@ -4,10 +4,10 @@ import os
 import sys
 from argparse import ArgumentParser
 from pathlib import Path
+import re
 
 from jinja2 import Environment, FileSystemLoader
-from selenium import webdriver
-import edgedriver_autoinstaller
+from imgkit import from_file
 from mutagen.easyid3 import EasyID3
 import yaml
 
@@ -85,12 +85,21 @@ out = Path(__file__).parent / "html" / "out.html"
 with open(out, mode="w", encoding="utf-8") as f:
   f.write(template.render(data))
 
-options = webdriver.EdgeOptions()
-options.add_argument('--headless')
-options.add_argument("--window-size=750,820")
-edgedriver_autoinstaller.install()
-driver = webdriver.Edge(options=options)
-driver.get('file:///' + str(out))
-driver.save_screenshot(str(MP3DIR / f'{args.outfile}.png'))
-driver.quit()
+w = 0
+h = 0
+with open(out.with_name("main.css"), mode="r", encoding="utf-8") as f:
+  css = f.read()
+  if (m := re.search(r"body[^}]*?width: (\d+)px", css, re.DOTALL)) != None:
+    w = m[1]
+  if (m := re.search(r"body[^}]*?height: (\d+)px", css, re.DOTALL)) != None:
+    h = m[1]
+
+if w == 0 or h == 0:
+  raise Exception("Unknown Size!")
+
+from_file(str(out), str(MP3DIR / f'{args.outfile}.png'), options={
+  "width": w,
+  "height": h,
+  "enable-local-file-access": ""
+})
 out.unlink()
