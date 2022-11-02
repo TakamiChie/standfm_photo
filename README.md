@@ -2,12 +2,13 @@
 
 stand.fm用の背景画像を作るスクリプトです。ご参考にどうぞ。
 
-SeleniumのChromeDriverを使ってるので**Chromeのインストールが必須**です。
+~~SeleniumのChromeDriverを使ってるので**Chromeのインストールが必須**です。~~
+
 環境変数OneDriveConsumerを見ているので**法人版OneDriveと個人版OneDrive両方を設定している人**以外うまく動かないかもしれません(わざとKeyErrorを出すようにしてるので失敗しても問題は起こらないはず)。
 
 ## 必須要件
 
-* Chromeがインストール済みであること
+* ~~Chromeがインストール済みであること~~←要らなくなりました
 * (ひょっとしたら)OneDriveが法人向け、個人向け共にセットアップ済みであること
 * Visual Studio Codeがインストール済みで。EasyLess拡張がインストール済みであること(cssを同梱していないため、1度lessファイルを編集してcssを作っておく必要がある)
 
@@ -33,6 +34,5 @@ SeleniumのChromeDriverを使ってるので**Chromeのインストールが必�
 ## 使用モジュール
 
 * jinja2 HTMLを作るのに使ってます
-* selenium ヘッドレスChromeブラウザを立ち上げるのに使ってます
-* chromedriver-binary Chrome用のSeleniumドライバをインストールするのに使ってます
 * mutagen MP3タグを取得するのに使ってます
+* imgkit 画像の生成に使ってます
