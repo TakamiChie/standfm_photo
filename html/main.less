@@ -1,4 +1,4 @@
-@text-adjast: 100px;
+@text-adjast: 50px;
 @bar-percentage: 3.5;
 body{
   width: 750px;
@@ -9,22 +9,21 @@ body{
   font-size: 30px;
   background-image: url("background.png");
   background-size: 240px;
+  display: flex;
+  flex-direction: column;
 }
 
 article{
   display: block;
-  padding: 40px 50px;
+  padding: 20px 50px;
   border: 0 dashed white;
   box-sizing: border-box;
+  flex: 3;
   > div{
     height: 100%;
     display: flex;
     align-items: center;
   }
-}
-
-#daytitle, #credit{
-  height: calc(820px / @bar-percentage);
 }
 
 #daytitle{
@@ -57,8 +56,10 @@ article{
 }
 
 #maintitle{
-  height: calc(820px - 820px / @bar-percentage * 2);
   border-width: 8px 0;
+  flex: 6;
+  display: flex;
+  align-items: center;
   #title {
     font-size: 8ex;
   }

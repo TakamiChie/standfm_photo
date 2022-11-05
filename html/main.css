@@ -7,25 +7,24 @@ body {
   font-size: 30px;
   background-image: url("background.png");
   background-size: 240px;
+  display: flex;
+  flex-direction: column;
 }
 article {
   display: block;
-  padding: 40px 50px;
+  padding: 20px 50px;
   border: 0 dashed white;
   box-sizing: border-box;
+  flex: 3;
 }
 article > div {
   height: 100%;
   display: flex;
   align-items: center;
 }
-#daytitle,
-#credit {
-  height: calc(820px / 3.5);
-}
 #daytitle {
   background-color: #DFF0FF;
-  padding-top: 100px;
+  padding-top: 50px;
   border-bottom-width: 8px;
 }
 #daytitle > div.left {
@@ -50,15 +49,17 @@ article > div {
   font-size: 7.5ex;
 }
 #maintitle {
-  height: calc(820px - 820px / 3.5 * 2);
   border-width: 8px 0;
+  flex: 6;
+  display: flex;
+  align-items: center;
 }
 #maintitle #title {
   font-size: 8ex;
 }
 #credit {
   background-color: #F0FFDF;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   border-top-width: 8px;
 }
 #credit #chname {
