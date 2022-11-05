@@ -102,4 +102,4 @@ from_file(str(out), str(MP3DIR / f'{args.outfile}.png'), options={
   "height": h,
   "enable-local-file-access": ""
 })
-out.unlink()
+
