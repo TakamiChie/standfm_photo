@@ -7,7 +7,11 @@ body {
   font-size: 30px;
   background-image: url("background.png");
   background-size: 240px;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
   flex-direction: column;
 }
 article {
@@ -15,11 +19,16 @@ article {
   padding: 20px 50px;
   border: 0 dashed white;
   box-sizing: border-box;
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
   flex: 3;
 }
 article > div {
   height: 100%;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
   align-items: center;
 }
 #daytitle {
@@ -33,6 +42,8 @@ article > div {
   margin-right: 10px;
 }
 #daytitle > div > div.text {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
   flex: 1;
 }
 #daytitle > div > div.text > span {
@@ -50,8 +61,13 @@ article > div {
 }
 #maintitle {
   border-width: 8px 0;
+  -webkit-box-flex: 6;
+  -webkit-flex: 6;
   flex: 6;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
   align-items: center;
 }
 #maintitle #title {

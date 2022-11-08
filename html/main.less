@@ -1,5 +1,26 @@
 @text-adjast: 50px;
 @bar-percentage: 3.5;
+
+.flex(@part){
+  -webkit-box-flex: @part;
+  -webkit-flex: @part;
+  flex: @part;
+}
+.flex-display(){
+  display: -webkit-box;
+  display: flex;
+}
+.flex-direction(@direction, @orient, @boxdirection){
+  -webkit-box-orient: @orient;
+  -webkit-box-direction: @boxdirection;
+  -webkit-flex-direction: @direction;
+  flex-direction: @direction;  
+}
+.flex-align-items(@align){
+  -webkit-box-align: @align;
+  -webkit-align-items: @align;
+  align-items: @align;
+}
 body{
   width: 750px;
   height: 750px;
@@ -9,8 +30,8 @@ body{
   font-size: 30px;
   background-image: url("background.png");
   background-size: 240px;
-  display: flex;
-  flex-direction: column;
+  .flex-display;
+  .flex-direction(column, vertical, normal);
 }
 
 article{
@@ -18,11 +39,11 @@ article{
   padding: 20px 50px;
   border: 0 dashed white;
   box-sizing: border-box;
-  flex: 3;
+  .flex(3);
   > div{
     height: 100%;
-    display: flex;
-    align-items: center;
+    .flex-display;
+    .flex-align-items(center);
   }
 }
 
@@ -37,7 +58,7 @@ article{
       margin-right: 10px;
     }
     > div.text{
-      flex: 1;
+      .flex(1);
       > span{
         display: block;
         &#day{
@@ -57,9 +78,9 @@ article{
 
 #maintitle{
   border-width: 8px 0;
-  flex: 6;
-  display: flex;
-  align-items: center;
+  .flex(6);
+  .flex-display;
+  .flex-align-items(center);
   #title {
     font-size: 8ex;
   }
